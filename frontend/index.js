@@ -1,7 +1,7 @@
 // import axios from 'axios';
-const BASE_URL = 'http://localhost:5000';
+const BASE_URL = 'https://niti-ai-backend.onrender.com';
 let data=[]
-let myInterval;
+let slideshow;
 const getItems = async () => {
   try {
     const response = await axios.get(`${BASE_URL}/`);
@@ -71,7 +71,7 @@ function change(){
 
 }
 function stop(){
-  clearInterval(myInterval);
+  clearInterval(slideshow);
 }
 window.onload=getItems;
 
