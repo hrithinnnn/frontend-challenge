@@ -1,7 +1,7 @@
 radio=document.getElementsByName("position")
 active=document.getElementsByClassName("item")
 let myInterval;
-
+let isSlideShow=false;
 const data=[
     {
         'img-src':'../backend/download.jpg',
@@ -90,9 +90,15 @@ function previous(){
 }
 
 function start(){
+    isSlideShow=true;
+  let startBtn=document.getElementById("start");
+  startBtn.classList.add("active")
 myInterval=setInterval(next,3000);
 }
 function stop(){
+    isSlideShow=false;
+    let startBtn=document.getElementById("start");
+    startBtn.classList.remove("active");
     clearInterval(myInterval);
 }
 
