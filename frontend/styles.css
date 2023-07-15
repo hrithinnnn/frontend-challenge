@@ -1,0 +1,202 @@
+body{
+    background-color: #000000;
+}
+
+div#carousel {
+height: 50vh;
+width:90%;
+position:relative;
+transform: scale(0.95,0.95);
+transform: translate(5%);
+/* background-color: rgba(0,0,0,0.8); */
+}
+/* #radio-btn-container{
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    transform: translateX(-50%);
+} */
+
+div.item {
+    position: absolute;
+    width: 30%;
+    height: 93%;
+    opacity:0;
+    z-index:0;
+    border-radius: 10px;
+}
+div.item.active1{
+    margin-left:2.5%;
+    opacity:1;
+    animation: fade 0.5s;
+    z-index:1;
+    transition: all 0.5s;
+}
+div.item.active2{
+    margin-left:35%;
+    opacity:1;
+    animation: fade 0.5s;
+    z-index:1;
+    transition: all 0.5s;
+}
+div.item.active3{
+    margin-left:67.5%;
+    opacity:1;
+    animation: fade 0.5s;
+    z-index:1;
+    transition: all 0.5s;
+}
+div.item.active1:hover,div.item.active2:hover,div.item.active3:hover{
+            opacity: 1;
+            transform: scale(1.1,1.1);
+            content: '';
+            /* width: 32%; */
+            height: 100%;
+            background-repeat: no-repeat;
+            background-color: #999;
+            background-size: 50%,50%;
+            z-index:3000;
+            border-bottom-left-radius: 0px;
+            border-bottom-right-radius: 0px;
+}
+.carousel-btn{
+    position: absolute;
+    z-index: 4000;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    top:50%;
+    transform: translateY(-50%);
+    color: rgba(255,255,255,0.5);
+    cursor: pointer;
+    border-radius: 0.25rem;
+    background-color: rgba(0,0,0,0.8);
+}
+#prev{
+    left:0rem;
+}
+#next{
+    right: 0rem;
+}
+
+.desc-container{
+    /* border-top: black solid 1px; */
+    font-family: 'Bebas Neue', sans-serif;
+    display: none;
+    opacity: 0;
+    color: white;
+    background-color: rgba(0, 0, 0);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    height: fit-content;
+    animation: fade 0.3s forwards;
+}
+div.item.active1:hover .desc-container,div.item.active2:hover .desc-container,div.item.active3:hover .desc-container{
+    display: block;
+    animation-name: show;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    z-index: 4000;
+}
+div.item.active1:hover .desc-container,div.item.active2:hover .desc-container,div.item.active3:hover .desc-container
+
+{
+    display: block;
+    /* opacity:1; */
+    animation-name: fade;
+    animation-duration: 0.5s;
+    animation-delay: 0.5s;
+    z-index: 4000;
+}
+
+#radio-btn-container{
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%,100%);
+}
+button{
+    position: absolute;
+    z-index: 200;
+}
+@keyframes fade {
+    0%{
+        opacity: 0;
+    }
+    100%{
+        opacity:1;
+        transform: opacity linear;
+    }
+
+    
+}
+
+@keyframes show {
+    0%{
+        display: none;
+    }
+    100%{
+        display: block;
+    }
+}
+
+
+
+
+
+
+
+
+.btns {
+    z-index:-1;
+    appearance: none;
+    background-color: transparent;
+    border: 0.125em solid #1A1A1A;
+    border-radius: 0.9375em;
+    box-sizing: border-box;
+    color: #3B3B3B;
+    cursor: pointer;
+    display: inline-block;
+    font-family: Roobert,-apple-system,BlinkMacSystemFont,"Segoe UI",Helvetica,Arial,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol";
+    font-size: 16px;
+    font-weight: 600;
+    line-height: normal;
+    /* margin: 0; */
+    min-height: 3.75em;
+    min-width: 0;
+    outline: none;
+    padding: 1em 2.3em;
+    text-align: center;
+    text-decoration: none;
+    transition: all 300ms cubic-bezier(.23, 1, 0.32, 1);
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    will-change: transform;
+   }
+   
+   .btns:disabled {
+    pointer-events: none;
+   }
+   
+   .btns:hover {
+    color: #fff;
+    background-color: #1A1A1A;
+    box-shadow: rgba(0, 0, 0, 0.25) 0 8px 15px;
+    transform: translateY(-2px);
+   }
+   
+   .btns:active {
+    box-shadow: none;
+    transform: translateY(0);
+   }
+   #start{
+    position: absolute;
+    bottom: 5%;
+    left:5%;
+   }
+   #stop{
+    position: absolute;
+    bottom: 5%;
+    right:5%;
+   }
